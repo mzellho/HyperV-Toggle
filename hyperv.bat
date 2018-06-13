@@ -1,7 +1,7 @@
 @ECHO OFF
 
-FOR /F "tokens=2" %%a IN ('BCDEDIT /enum ^| FIND /i "hypervisorlaunchtype"') DO SET $CURRENT_LAUNCHTYPE=%%a
-ECHO Welcome! Hypervisor Launch Type is set to [%$CURRENT_LAUNCHTYPE%] at the moment.
+FOR /F "tokens=2" %%a IN ('BCDEDIT /enum ^| FIND /i "hypervisorlaunchtype"') DO SET CURRENT_LAUNCHTYPE=%%a
+ECHO Welcome! Hypervisor Launch Type is set to [%CURRENT_LAUNCHTYPE%] at the moment.
 
 ECHO.
 CHOICE /C DAVO /M "Do you want to set up Hypervisor Launch Type for [D]ocker/[A]uto or [V]MWare/[O]ff?" /N
@@ -9,7 +9,7 @@ IF "%ERRORLEVEL%" == "1" SET LAUNCHTYPE=Auto
 IF "%ERRORLEVEL%" == "2" SET LAUNCHTYPE=Auto
 IF "%ERRORLEVEL%" == "3" SET LAUNCHTYPE=Off
 IF "%ERRORLEVEL%" == "4" SET LAUNCHTYPE=Off
-IF "%$CURRENT_LAUNCHTYPE%" == "%LAUNCHTYPE%" GOTO unchanged
+IF "%CURRENT_LAUNCHTYPE%" == "%LAUNCHTYPE%" GOTO unchanged
 
 ECHO.
 ECHO Setting Hypervisor Launch Type to [%LAUNCHTYPE%]
@@ -33,4 +33,4 @@ GOTO end
 ECHO.
 ECHO Have a nice day!
 SET LAUNCHTYPE=
-SET $CURRENT_LAUNCHTYPE=
+SET CURRENT_LAUNCHTYPE=
