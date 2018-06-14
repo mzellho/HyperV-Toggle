@@ -17,7 +17,7 @@ BCDEDIT /set hypervisorlaunchtype %LAUNCHTYPE%
 
 ECHO.
 ECHO Note: Changed Hypervisor Launch Type only take effect after a restart!
-CHOICE /C YN /M "Do you want to reboot computer in order to activate the new Hypervisor Launch Type setting [Y/N]?" /N
+CHOICE /C YN /M "Do you want to reboot the computer in order to activate the new Hypervisor Launch Type setting [Y/N]?" /N
 IF "%ERRORLEVEL%" == "1" GOTO reboot
 IF "%ERRORLEVEL%" == "2" GOTO end
 
@@ -32,5 +32,6 @@ GOTO end
 :end
 ECHO.
 ECHO Have a nice day!
+
 SET LAUNCHTYPE=
 SET CURRENT_LAUNCHTYPE=
