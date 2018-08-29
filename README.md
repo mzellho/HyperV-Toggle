@@ -1,4 +1,5 @@
-# HyperV-Toggle
+HyperV-Toggle
+=============
 
 Since *Virtual Machines* and *Docker* require different [**Hypervisor Launch Type**](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/)s on a Windows Host, this script can be used to quickly toggle between `Off` (*VMWare, VirtualBox, ...*) and `Auto` (*Docker*).
 
